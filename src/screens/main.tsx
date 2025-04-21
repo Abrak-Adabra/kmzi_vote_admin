@@ -1,4 +1,3 @@
-'use client'
 import { useEffect, useState } from 'react'
 import { Button, Container } from 'react-bootstrap'
 import VotingPage from './voting'

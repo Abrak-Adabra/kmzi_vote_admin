@@ -31,7 +31,6 @@ export default function ViewPage() {
 
     useEffect(() => {
         if (status?.error) setError(status.error)
-        if (status?.stage == 'none') setError(null)
     }, [status])
 
     useEffect(() => {

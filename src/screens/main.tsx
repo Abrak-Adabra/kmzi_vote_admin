@@ -4,10 +4,11 @@ import VotingPage from './voting'
 import ViewPage from './view'
 
 export default function MainPage() {
-    const [mode, setMode] = useState<'vote' | 'view'>('vote')
+    const [mode, setMode] = useState<'vote' | 'view'>('view')
 
     useEffect(() => {
-        setMode(localStorage.getItem('mode') as 'vote' | 'view')
+        const previousMode = localStorage.getItem('mode')
+        if (previousMode) setMode(previousMode as 'vote' | 'view')
     }, [])
 
     return (

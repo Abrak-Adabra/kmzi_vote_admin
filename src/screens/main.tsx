@@ -4,7 +4,7 @@ import VotingPage from './voting'
 import ViewPage from './view'
 
 export default function MainPage() {
-    const [mode, setMode] = useState<'vote' | 'view'>()
+    const [mode, setMode] = useState<'vote' | 'view'>('vote')
 
     useEffect(() => {
         setMode(localStorage.getItem('mode') as 'vote' | 'view')

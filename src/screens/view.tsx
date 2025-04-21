@@ -8,6 +8,7 @@ type Status = { stage: string; active: string; error?: string }
 export default function ViewPage() {
     const [status, setStatus] = useState<Status | null>(null)
     const [error, setError] = useState<string | null>(null)
+    const [showOk, setShowOk] = useState<boolean>(false)
 
     const [ip, setIp] = useState<string | null>(null)
     const [isLoadingIp, setIsLoadingIp] = useState<boolean>(false)
@@ -69,9 +70,19 @@ export default function ViewPage() {
     }
     return (
         <>
-            <Form.Label style={{ display: 'flex', alignItems: 'center' }}>
+            <Form.Label
+                style={{ display: 'flex', alignItems: 'center' }}
+                onClick={() => {
+                    if (ip) {
+                        navigator.clipboard.writeText(ip)
+                        setShowOk(true)
+                        setTimeout(() => setShowOk(false), 1000)
+                    }
+                }}
+            >
                 <b>{'IP aдрес для подключения: '}</b>
                 {isLoadingIp ? <Spinner /> : ip}
+                {showOk ? '✔' : ''}
             </Form.Label>
             <Wrapper>
                 <div>

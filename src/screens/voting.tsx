@@ -184,6 +184,7 @@ export default function VotingPage() {
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Check
+                                            disabled={!values.answers.length}
                                             label="Несколько вариантов ответа"
                                             checked={values.any}
                                             onChange={handleChange}

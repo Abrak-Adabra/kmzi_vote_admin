@@ -177,9 +177,10 @@ export default function VotingPage() {
                                     <Form.Group>
                                         <Form.Check
                                             label="Свой вариант ответа"
-                                            checked={values.opinion || !values.answers.length}
+                                            checked={values.opinion}
                                             onChange={handleChange}
                                             name="opinion"
+                                            style={{ pointerEvents: !values.answers.length ? 'none' : 'all' }}
                                         />
                                     </Form.Group>
                                     <Form.Group>

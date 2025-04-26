@@ -36,7 +36,7 @@ export default function ViewPage() {
 
     useEffect(() => {
         try {
-            const sse = new EventSource(`http://localhost:5000/status`)
+            const sse = new EventSource(`https://localhost:5000/status`)
             sse.onmessage = (e) => {
                 try {
                     setStatus(JSON.parse(e.data))

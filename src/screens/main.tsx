@@ -15,6 +15,7 @@ export default function MainPage() {
         <Container
             style={{ display: 'flex', flexDirection: 'column', rowGap: '20px', paddingBlock: '20px', height: '100%' }}
         >
+            <a href="https://localhost:5000/">разрешите посещать</a>
             {mode && (
                 <Button
                     variant="dark"

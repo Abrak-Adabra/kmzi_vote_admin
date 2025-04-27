@@ -83,6 +83,7 @@ export default function ViewPage() {
                 <b>{'IP aдрес для подключения: '}</b>
                 {isLoadingIp ? <Spinner /> : ip}
                 {showOk ? '✔' : ''}
+                <a href={`https://${ip}:5000/`}> разрешите посещать на клиенте</a>
             </Form.Label>
             <Wrapper>
                 <div>
